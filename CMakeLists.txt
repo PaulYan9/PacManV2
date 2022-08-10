@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (PacManV2 "PacManV2.cpp" "PacManV2.h" "Model/filereader.h" "Model/filereader.cpp" "Model/datadesc.h" "Model/modelexception.h")
+add_executable (PacManV2 "PacManV2.cpp" "PacManV2.h" "Model/filereader.h" "Model/filereader.cpp" "Model/datadesc.h" "Model/modelexception.h" "Model/idataparser.h" "Model/leveltxtparser.h" "Model/leveltxtparser.cpp")
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/level1.txt
 	${CMAKE_CURRENT_BINARY_DIR} COPYONLY)
