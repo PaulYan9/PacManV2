@@ -13,8 +13,23 @@ int main()
 {
 	try
 	{
-		std::string file_name = "level12.txt";
-		FileReader reader(file_name);
+		std::string file_name = "level1.txt";
+		FileReader reader("");
+
+		if (reader.open(file_name))
+		{
+			cout << "File " << file_name << " is open\n";
+
+			while (!(reader.is_end()))
+				cout << reader.read_line() << "\n";
+
+			if (reader.close())
+				cout << "File " << file_name << " is close\n";
+			else
+				throw FileOpenException("Fail close file");
+		}
+		else
+			throw FileOpenException("File is open");
 	}
 	catch(WrongFileNameException e)
 	{

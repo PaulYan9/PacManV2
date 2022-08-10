@@ -36,3 +36,13 @@ public:
 	std::string what() { return "File open: " + this->__message; }
 };
 
+class FileReadException : public std::exception
+{
+private:
+	std::string __message;
+
+public:
+	FileReadException(const std::string& msg) : __message(msg) {}
+
+	std::string what() { return "File read fail: " + this->__message; }
+};
